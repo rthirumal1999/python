@@ -16,5 +16,15 @@ pipeline{
 				}
 			}
 		}
+		stage('Dist...'){
+			steps {
+				sh 'pyinstaller --onefile src/main.py'
+			}
+			post {
+				success {
+					archiveArtifacts 'dist/main'
+				}
+			}
+		}
 	}
 }
