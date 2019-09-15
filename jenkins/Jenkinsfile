@@ -19,6 +19,7 @@ pipeline{
 		stage('Dist...'){
 			steps {
 				sh 'pyinstaller --onefile src/main.py'
+				sh 'ls -l dist'
 			}
 			post {
 				success {
